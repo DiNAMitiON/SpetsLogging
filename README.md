@@ -1,4 +1,4 @@
-Flask
+SpetsLoging
 =====
 
 Flask is a lightweight `WSGI`_ web application framework. It is designed
@@ -20,34 +20,40 @@ community that make adding new functionality easy.
 Installing
 ----------
 
-Install and update using `pip`_:
-
-.. code-block:: text
-
-    $ pip install -U Flask
-
-.. _pip: https://pip.pypa.io/en/stable/getting-started/
+Install and update using [pip](https://pip.pypa.io/en/stable/getting-started/):
+```text
+$ pip install spetsloging
+```
 
 
 A Simple Example
 ----------------
 
-.. code-block:: python
 
-    # save this as app.py
-    from flask import Flask
+```python
+import spetsloging
 
-    app = Flask(__name__)
+spetsloging.settings(
+    format='%d.%m.%y %h:%m %stat >> %message',
+    color={
+        info='blue',
+        debug='orange',
+        warning='red'
+    }
+)
 
-    @app.route("/")
-    def hello():
-        return "Hello, World!"
+for i in range(5):
+    spetsloging.info(i)
+```
 
-.. code-block:: text
-
-    $ flask run
-      * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-
+```text
+30.10.2023 22:13 [info] >> 0
+30.10.2023 22:13 [info] >> 1
+30.10.2023 22:13 [info] >> 2
+30.10.2023 22:13 [info] >> 3
+30.10.2023 22:13 [info] >> 4
+30.10.2023 22:13 [info] >> 5
+```
 
 Contributing
 ------------
@@ -61,12 +67,8 @@ contribution to Flask, see the `contributing guidelines`_.
 Donate
 ------
 
-The Pallets organization develops and supports Flask and the libraries
-it uses. In order to grow the community of contributors and users, and
-allow the maintainers to devote more time to the projects, `please
-donate today`_.
-
-.. _please donate today: https://palletsprojects.com/donate
+To support the development of the library, support its author.
+https://donationalerts.com/r/dinamition
 
 
 Links
@@ -74,7 +76,7 @@ Links
 
 -   Documentation: https://flask.palletsprojects.com/
 -   Changes: https://flask.palletsprojects.com/changes/
--   PyPI Releases: https://pypi.org/project/Flask/
--   Source Code: https://github.com/pallets/flask/
+-   PyPI Releases: https://pypi.org/project/SpetsLoging/
+-   Source Code: https://github.com/DiNAMitiON/SpetsLoging/
 -   Issue Tracker: https://github.com/pallets/flask/issues/
 -   Chat: https://discord.gg/pallets
