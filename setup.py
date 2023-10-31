@@ -15,8 +15,7 @@ setuptools.setup(
     packages=['spetsloging'],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        "License :: MIT License",
     ],
     python_requires='>=3.5',
 )
