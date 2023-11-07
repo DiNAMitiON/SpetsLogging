@@ -1,4 +1,4 @@
-SpetsLoging
+SpetsLogging
 =====
 
 SpetsLogging is a simple way to log in the console and in a file.
@@ -32,7 +32,7 @@ log.settings(
 )
 for i in range(5):
     log.info(i, file='test.log')
-    log.error('Test', file='test.log')
+    log.error('Test', shell=False, file='test.log')
     time.sleep(0.5)
 
 log.debug('Program completed')
